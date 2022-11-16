@@ -81,7 +81,7 @@ canvas.create_window(250, 220, window=link_field)
 cliptext = screen.clipboard_get()
 
 #paste button
-paste_btn = Button(screen, text="Paste Url", command=paste_url)
+paste_btn = Button(screen, text="DON'T PRESS IT", command=paste_url)
 
 canvas.create_window(90, 250, window=paste_btn)
 
