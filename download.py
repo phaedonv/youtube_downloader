@@ -2,6 +2,9 @@
 # pip install moviepy
 # pip install pytube
 
+# For creating Windows executables
+# pip install pyinstaller
+
 from os import path
 from tkinter import *
 from tkinter import filedialog
