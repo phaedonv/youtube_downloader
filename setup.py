@@ -1,7 +1,7 @@
 import sys
 import os
 
-from CX_Freeze import setup, Executable
+from cx_Freeze import setup, Executable
 
 #add files
 files = ["dead.ico"]
