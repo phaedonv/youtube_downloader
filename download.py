@@ -5,6 +5,9 @@
 # For creating Windows executables
 # pip install pyinstaller
 
+# For compiling into Windows & other executables!!
+#pip install cx_freeze
+
 from os import path
 from tkinter import *
 from tkinter import filedialog
@@ -45,13 +48,13 @@ def do_popup(event):
 
 screen = Tk()
 title = screen.title("Dead Pull")
-canvas = Canvas(screen, width=500, height=500)
+canvas = Canvas(screen, width=500, height=700)
 canvas.pack()
 
-logo_img = PhotoImage(file="cute_d.png")
+logo_img = PhotoImage(file="DeadPull-sticker.png")
 #resize
-logo_img = logo_img.subsample(4, 4)
-canvas.create_image(250, 80, image=logo_img)
+logo_img = logo_img.subsample(2, 2)
+canvas.create_image(250, 100, image=logo_img)
 
 #add temporary directional text into txt-field
 def temp_text(e):
@@ -59,7 +62,7 @@ def temp_text(e):
 
 #link field
 link_field = Entry(screen, width=50)
-link_label = Label(screen, text="Enter Video Url: ", font=('Roboto', 18))
+link_label = Label(screen, text="Enter Video Url: ", font=('Roboto', 15))
 #temporary
 link_field.insert(0, "Please press Ctrl V, to paste video url")
 link_field.pack(pady=20)
@@ -70,12 +73,12 @@ path_label = Label(screen, text="Select Pull Location", font=('Roboto', 15))
 select_btn = Button(screen, text="Select", command=select_path)
 
 #add to window
-canvas.create_window(250, 280, window=path_label)
-canvas.create_window(250, 330, window=select_btn)
+canvas.create_window(250, 330, window=path_label)
+canvas.create_window(250, 380, window=select_btn)
 
 #add widgets
-canvas.create_window(250, 190, window=link_label)
-canvas.create_window(250, 220, window=link_field)
+canvas.create_window(250, 240, window=link_label)
+canvas.create_window(250, 270, window=link_field)
 
 # Get the data from the clipboard
 cliptext = screen.clipboard_get()
@@ -83,13 +86,13 @@ cliptext = screen.clipboard_get()
 #paste button
 paste_btn = Button(screen, text="DON'T PRESS IT", command=paste_url)
 
-canvas.create_window(90, 250, window=paste_btn)
+canvas.create_window(110, 300, window=paste_btn)
 
 #download buttons
 download_btn = Button(screen, text="Pull It", command=download_file)
 
 #add to canvas
-canvas.create_window(250, 390, window=download_btn)
+canvas.create_window(250, 440, window=download_btn)
 
 
 ###############################################################
