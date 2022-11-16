@@ -9,10 +9,27 @@ from moviepy import *
 from moviepy.editor import VideoFileClip
 from pytube import YouTube
 
+import shutil
+
 #functions
 def select_path():
     path = filedialog.askdirectory()
     path_label.config(text=path)
+
+def download_file():
+    #get usr link
+    get_link = link_field.get() 
+    #get selected link
+    user_path = path_label.cget("text")
+    screen.title("Pulling...")
+
+    #download Video
+    mp4_video = YouTube(get_link).streams.get_highest_resolution().download()
+    vid_clip = VideoFileClip(mp4_video)
+    vid_clip.close()
+    #move file 2 selected dir
+    shutil.move(mp4_video, user_path)
+    screen.title("Dead Pulled!!! Pull Another One...")
 
 screen = Tk()
 title = screen.title("Dead Pull")
@@ -41,7 +58,7 @@ canvas.create_window(250, 190, window=link_label)
 canvas.create_window(250, 220, window=link_field)
 
 #download buttons
-download_btn = Button(screen, text="Pull It")
+download_btn = Button(screen, text="Pull It", command=download_file)
 
 #add to canvas
 canvas.create_window(250, 390, window=download_btn)
