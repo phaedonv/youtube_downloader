@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['dead_pull_YT_downloader-v.1.1'],
+    ['download.py'],
     pathex=[],
     binaries=[],
     datas=[],
