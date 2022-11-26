@@ -12,10 +12,11 @@ from os import path
 from tkinter import *
 from tkinter import filedialog
 #from moviepy import *
-#from moviepy.editor import VideoFileClip
+
 #import moviepy.editor as moviepy
 from moviepy.video.fx.crop import crop
-
+from moviepy.video.io.VideoFileClip import VideoFileClip
+#from moviepy.editor import VideoFileClip
 from pytube import YouTube
 
 import shutil
